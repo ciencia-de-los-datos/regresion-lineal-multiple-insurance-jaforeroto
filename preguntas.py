@@ -97,12 +97,12 @@ def pregunta_03():
             # Paso 2: Construya un selector de características que seleccione las K
             # características más importantes. Utilice la función f_regression.
             (
-                "selectBestK",
+                "selectKBest",
                 SelectKBest(score_func = f_regression),
             ),
             # Paso 3: Construya un modelo de regresión lineal.
             (
-                "linearRegression",
+                "linearReg",
                 LinearRegression(),
             ),
         ],
