@@ -6,6 +6,7 @@ En este laboratorio se entrenara un modelo de regresión lineal multiple que inc
 selección de las n variables más relevantes usando una prueba f.
 
 """
+
 # pylint: disable=invalid-name
 # pylint: disable=unsubscriptable-object
 
@@ -21,7 +22,7 @@ def pregunta_01():
     df = pd.read_csv('insurance.csv', sep=",", thousands=None, decimal=".")
 
     # Asigne la columna `charges` a la variable `y`.
-    y = df.charges
+    y = df['charges']
 
     # Asigne una copia del dataframe `df` a la variable `X`.
     X = df.copy()
@@ -72,7 +73,7 @@ def pregunta_03():
     # Importe GridSearchCV
     # Importe Pipeline
     # Importe OneHotEncoder
-    from sklearn.compose import make_column_selector, make_column_transformer
+    from sklearn.compose import make_column_transformer
     from sklearn.feature_selection import SelectKBest, f_regression
     from sklearn.linear_model import LinearRegression
     from sklearn.model_selection import GridSearchCV
@@ -170,4 +171,6 @@ def pregunta_04():
     ).round(2)
 
     # Retorne el error cuadrático medio para entrenamiento y prueba
+
+
     return mse_train, mse_test
