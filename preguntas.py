@@ -30,7 +30,7 @@ def pregunta_01():
     # Remueva la columna `charges` del DataFrame `X`.
     X = X.drop(columns = 'charges')
 
-    # Retorne `X` y `y`
+    # Retorne `X` y `y'
     return X, y
 
 
