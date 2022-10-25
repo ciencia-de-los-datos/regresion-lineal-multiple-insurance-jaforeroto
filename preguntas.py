@@ -19,7 +19,7 @@ def pregunta_01():
     df = pd.read_csv('insurance.csv',sep=",",thousands=None,decimal=".")
 
     # Asigne la columna `charges` a la variable `y`.
-    y = df.charges
+    y = df['charges']
 
     # Asigne una copia del dataframe `df` a la variable `X`.
     X = df.copy()
@@ -97,12 +97,12 @@ def pregunta_03():
             # Paso 2: Construya un selector de características que seleccione las K
             # características más importantes. Utilice la función f_regression.
             (
-                "selectKBest",
+                "selectBestK",
                 SelectKBest(score_func = f_regression),
             ),
             # Paso 3: Construya un modelo de regresión lineal.
             (
-                "linearReg",
+                "linearRegression",
                 LinearRegression(),
             ),
         ],
@@ -114,7 +114,7 @@ def pregunta_03():
     # Defina un diccionario de parámetros para el GridSearchCV. Se deben
     # considerar valores desde 1 hasta 11 regresores para el modelo
     param_grid = {
-        'selectKBest__k': range(1,12),
+        'selectKBest_k': range(1,12),
     }
 
     # Defina una instancia de GridSearchCV con el pipeline y el diccionario de
