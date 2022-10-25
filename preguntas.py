@@ -18,7 +18,7 @@ def pregunta_01():
     -------------------------------------------------------------------------------------
     """
     # Lea el archivo `insurance.csv` y asignelo al DataFrame `df`
-    df = pd.read_csv('insurance.csv')
+    df = pd.read_csv("insurance.csv")
 
     # Asigne la columna `charges` a la variable `y`.
     y = df['charges']
@@ -27,7 +27,7 @@ def pregunta_01():
     X = df.copy()
 
     # Remueva la columna `charges` del DataFrame `X`.
-    X.drop(columns=['charges'],inplace=True)
+    X.drop('charges', axis=1,inplace=True)
 
     # Retorne `X` y `y`
     return X, y
@@ -120,6 +120,7 @@ def pregunta_03():
     # Defina una instancia de GridSearchCV con el pipeline y el diccionario de
     # parámetros. Use cv = 5, y como métrica de evaluación el valor negativo del
     # error cuadrático medio.
+
     gridSearchCV = GridSearchCV(
         estimator=pipeline,
         param_grid=param_grid
